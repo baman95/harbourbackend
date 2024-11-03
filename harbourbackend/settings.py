@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7t0xowy4z1%#=8uay)zd2hnc(a!lii3@p%)qct6-s4(nz8bvow
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'harbourbackend.onrender.com']
 
 
 # Application definition
@@ -58,10 +58,12 @@ ROOT_URLCONF = 'harbourbackend.urls'
 # Allow CORS for frontend (adjust based on your requirements)
 CORS_ALLOW_CREDENTIALS = True  # Allow cookies to be sent with requests
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',  # Frontend URL
+    'http://localhost:3000',        # Local testing
+    'https://harbourfrontend.vercel.app'  # Vercel URL
 ]
 CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:3000',  # Frontend URL
+    'http://localhost:3000',        # Local testing
+    'https://harbourfrontend.vercel.app'  # Vercel URL
 ]
 
 # Allow the Content-Type header in requests
@@ -147,7 +149,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
